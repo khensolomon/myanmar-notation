@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "description": "Myanmar digital notation",
+  "main": "index.js",
+  "scripts": {
+    "convert": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khensolomon/myanmar-notation.git"
+  },
+  "keywords": [
+    "Myanmar",
+    "Number",
+    "Notation",
+    "Convertor"
+  ],
+  "author": "Khen Solomon Lethil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khensolomon/myanmar-notation/issues"
+  },
+  "homepage": "https://github.com/khensolomon/myanmar-notation#readme"
+}
