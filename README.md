@@ -1,9 +1,13 @@
 # myanmar-notation
 ...get Myanmar digital and notation
+
+Install `npm i myanmar-notation` then require...
+
+
 ```js
 let notation = require('myanmar-notation');
 ```
-and the results...
+and get the results...
 ```js
 let result = notation.get('2700');
 // the result returned as Object
