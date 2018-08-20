@@ -1,19 +1,21 @@
-var notation = require('./notation');
-// console.log(new notation('2344').result);
-// console.log(notation);
+let notation = require('./notation');
 module.exports = {
-  convert:function (q) {
-    return new notation(q).result;
+  get:function (q) {
+    return new notation().get(q);
   },
-  test:function (q) {
-    return 'yes->'+q;
+  name:function () {
+    return new notation().configName();
+  },
+  digit:function () {
+    return new notation().configDigit();
+  },
+  tone:function () {
+    return new notation().configTone();
+  },
+  creaky:function () {
+    return new notation().configCreaky();
+  },
+  conjunction:function () {
+    return new notation().configConjunction();
   }
 };
-// var notation = module.exports = {}
-// notation.convert = function (q) {
-//   console.log("This is a message from the demo package");
-// }
-// exports.printMsg = function() {
-//   console.log("This is a message from the demo package");
-// }
-
