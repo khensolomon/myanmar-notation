@@ -38,6 +38,16 @@ let result = notation.get('27000000');
     }
   ]
 }
+// Reverse
+let result = notation.get('၈၆ဝ');
+{
+  "Numeric": "860",
+  "Notation": [
+    {
+      "sense": "ရှစ်ရာနှင့် ခြောက်ဆယ်"
+    }
+  ]
+}
 ```
 Configuration
 ```js

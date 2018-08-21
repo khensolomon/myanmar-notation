@@ -1,6 +1,5 @@
 module.exports = class Notation {
   constructor() {
-    this.result=false;
     this.config={
       name:["သုည","တစ်","နှစ်","သုံး","လေး","ငါး","ခြောက်","ခုနစ်","ရှစ်","ကိုး"],
       digit:["ဝ","၁","၂","၃","၄","၅","၆","၇","၈","၉"],
@@ -27,18 +26,27 @@ module.exports = class Notation {
     return this.config.conjunction;
   }
   get(query) {
-    let q=Number(query).toString();
-    if (!isNaN(q)){
-      let en = this.requestFormat(q);
-      let Myanmar = this.requestDigit(en);
-      this.result={
-        Numeric:Myanmar,
-        Notation:this.config.task.map(k=>{
-          return this.requestTask(q,k);
-        }).filter(function(e){return e})
-      }
+    let q=Number(query).toString(),t=0;
+    if (isNaN(q)){
+      q=this.getUni(query),t=1;
+      if (q<1 || isNaN(q)) return false;
     }
-    return this.result;
+    return this.getResult(q,t);
+  }
+  getUni(query) {
+    let n = query.toString().split('').map(k=> {
+      if (this.config.digit.indexOf(k) >= 0) return this.config.digit.indexOf(k);
+    }).filter(function(e){return e == 0 || e}).join('');
+    return Number(n).toString();
+  }
+  getResult(q,t) {
+    let n = this.requestFormat(q); // m = this.requestDigit(n);
+    return {
+      Numeric:(t)?n:this.requestDigit(n),
+      Notation:this.config.task.map(k=>{
+        return this.requestTask(q,k);
+      }).filter(function(e){return e})
+    };
   }
   requestTask(q,s) {
     if (q.length <= s) {
@@ -198,10 +206,10 @@ module.exports = class Notation {
     let i=0, e=[];
     while( i < l) { e.push(this.config.tone[k]); i++;}
     if (s)e.push('');
-    return e.join(this.config.conjunction.plus+' ');
+    return e.join(this.config.conjunction.plus+this.config.conjunction.space);
   }
   createString(n) {
-    return n.filter(function(e){return e}).join(this.config.conjunction.and+' ')
+    return n.filter(function(e){return e}).join(this.config.conjunction.and+this.config.conjunction.space)
   }
   strSeparate(str, n) {
     let e = new Array;
