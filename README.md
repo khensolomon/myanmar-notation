@@ -11,7 +11,7 @@ let notation = require('myanmar-notation');
 
 - [x] Return formatted Numeric
 - [x] Decimals are rounded (floor)
-- [x] Query `get(2700)`, `get('၂၇ဝဝ')`, `get('2,700.00')` is flexible
+- [x] Query `get(2700)`, `get('၂၇ဝဝ')`, `get('27,000,000.00')` is flexible
 
 ```js
 notation.get('2700');
@@ -25,31 +25,30 @@ notation.get('2700');
   ]
 }
 
-notation.get('27000000');
+notation.get('၂၇ဝဝ');
+// return
+{
+  "Numeric": "2,700",
+  "Notation": [
+    {
+      "sense": "နှစ်ထောင်နှင့် ခုနစ်ရာ"
+    }
+  ]
+}
+
+notation.get('27,000,000.00');
 // return
 {
   "Numeric": "၂၇,ဝဝဝ,ဝဝဝ",
   "Notation": [
     {
-      "sense": "သိန်းပေါင်း နှစ်ရာ့ခုနစ်ဆယ်"
+      "sense": "သိန်းပေါင်း နှစ်ရာ့ ခုနစ်ဆယ်"
     },
     {
-      "sense": "သန်းပေါင်း နှစ်ဆယ့်ခုနစ်"
+      "sense": "သန်းပေါင်း နှစ်ဆယ့် ခုနစ်"
     },
     {
       "sense": "နှစ်ကု​ဋေ​နှင့် ခုနစ်သန်း"
-    }
-  ]
-}
-
-// Reverse
-notation.get('၈၆ဝ');
-// return
-{
-  "Numeric": "860",
-  "Notation": [
-    {
-      "sense": "ရှစ်ရာနှင့် ခြောက်ဆယ်"
     }
   ]
 }

@@ -3,10 +3,10 @@ module.exports = {
   get:function (q) {
     return new notation().get(q);
   },
-  getCreaky:function (q) {
-  },
-  getNormal:function (q) {
-  },
+  // getCreaky:function (q) {
+  // },
+  // getNormal:function (q) {
+  // },
   name:function () {
     return new notation().configName();
   },

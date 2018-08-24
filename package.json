@@ -1,6 +1,6 @@
 {
   "name": "myanmar-notation",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "get Myanmar digital and notation",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "Myanmar",
     "Number",
     "Notation",
-    "Convertor"
+    "Convertor",
+    "Num2Word"
   ],
   "author": "Khen Solomon Lethil",
   "license": "MIT",

@@ -26,7 +26,7 @@ module.exports = class Notation {
     return this.config.conjunction;
   }
   get(query) {
-    let q=Math.floor(Number(query.replace(/,\s?/g, ""))).toString(),t=0;
+    let q=Math.floor(Number(query.toString().replace(/,\s?/g, ""))).toString(),t=0;
     if (isNaN(q)){
       q=this.getUni(query),t=1;
       if (q<1 || isNaN(q)) return false;
@@ -53,8 +53,8 @@ module.exports = class Notation {
       if (this.config.task.length) {
         this.config.task=[];
         return {
-          // "sense":this.requestCreakyTone(q)
-          "sense":this.requestWrittenTone(q)
+          // sense:this.requestCreakyTone(q)
+          sense:this.requestWrittenTone(q)
         }
       }
       return false;
@@ -83,9 +83,7 @@ module.exports = class Notation {
         rawSense.push(this.requestPrime(rulePrime,s)+this.requestCreakyTone(q,0,ruleExtract));
         rawSense.push(this.requestCreakyTone(q,rulePrime, s+1));
         rawSense.push(this.requestWrittenTone(q,s+1, q.length));
-        examNotation={
-          1:21
-        };
+        // examNotation={1:21};
       } else {
         if (rawCount > rawEndCount) {
           ruleExtract=rawCount;
@@ -95,8 +93,7 @@ module.exports = class Notation {
         rulePrime=1;
         rawSense.push(this.requestPrime(rulePrime,s,true)+this.requestCreakyTone(q,0,ruleExtract));
         rawSense.push(this.requestCreakyTone(q,ruleExtract, q.length));
-
-        examNotation={1:22};
+        // examNotation={1:22};
       }
     } else {
       if (s == rawEndCount) {
@@ -105,40 +102,48 @@ module.exports = class Notation {
         if (Number(q.substring(ruleExtract, q.length))){
           rawOver=this.config.conjunction.over;
         }
-
         rawSense.push(this.requestPrime(rulePrime,s)+this.requestCreakyTone(q,0,ruleExtract)+rawOver);
-
-        examNotation={1:31};
+        // examNotation={1:31};
       } else {
-        let abc=false;
         ruleExtract=rawCount-1+rawEndCount;
         rulePrime=rawCount-1;
         // ruleExtract=rawCount;
         if (ruleExtract > ruleMax){
           ruleExtract=rawEndCount-3;
           rulePrime=rawCount;
-          abc=true;
         }
         let rawOver='';
-        if (Number(q.substring(ruleExtract, q.length))){
+        // if (Number(q.substring(ruleExtract, q.length))){
+        //   rawOver=this.config.conjunction.over;
+        // }
+        let leftOver = q.substring(ruleExtract, q.length);
+        if (Number(leftOver)){
           rawOver=this.config.conjunction.over;
+          // leftOver = q.substring(ruleExtract, q.length-s);
+          leftOver = q.substring(ruleExtract, q.length-s);
         }
 
         rawSense.push(this.requestPrime(rulePrime,s)+this.requestCreakyTone(q,0,ruleExtract)+rawOver);
-        examNotation={
-          abc:abc,
-          1:32
-        };
+        // examNotation={
+        //   working:true,
+        //   a1:q,
+        //   a2:q.substring(0,ruleExtract),
+        //   a3:leftOver,
+        //   a4:leftOver.length,
+        //   a5:this.strSeparate(q.substring(ruleExtract, q.length),ruleExtract),
+        //   raw:raw
+        // };
       }
     }
 
     return {
       sense:this.createString(rawSense),
-      exam: examNotation
+      // exam: examNotation
     };
   }
   requestObject(str,callback) {
     let strCount = str.length, e=[];
+    // let testing = this.config.tone.reverse()
     // let strReverse = str.reverse(); index += to, ++index
     for (let index = 0; index < strCount;++index){
       let position = strCount - index;
@@ -161,7 +166,7 @@ module.exports = class Notation {
       return tone;
     }).map((k,index)=>{
       return k.name+k.tone;
-    }).join('')
+    }).join(' ')
   }
   requestWrittenTone(num,from,to) {
     let str = this.strIntersect(num,from,to);
