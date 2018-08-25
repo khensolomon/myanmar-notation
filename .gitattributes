@@ -5,6 +5,7 @@
 /.git export-ignore
 
 /test.* export-ignore
+/notation.v*.js export-ignore
 
 .editorconfig export-ignore
 .gitattributes export-ignore

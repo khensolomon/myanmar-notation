@@ -91,6 +91,7 @@ module.exports = class Notation {
         eachName(k.substring(ks,k.length));
       }
     }
+
     if (rawCount < 3) {
       if (s == rawEndCount) {
         ruleExtract=rawCount;
@@ -119,12 +120,38 @@ module.exports = class Notation {
       }
       rawSense.push(this.requestPrime(2,s)+this.requestCreakyTone(q,0,ruleExtract));
       eachName(q.substring(ruleExtract, q.length));
-      examNotation={ test:2, raw:raw};
+      examNotation={
+        test:3,
+        raw:raw
+      };
+      if (s == rawEndCount) {
+        // ruleExtract=rawCount;
+        // let rawOver='';
+        // if (Number(q.substring(ruleExtract, q.length))){
+        //   rawOver=this.config.conjunction.over;
+        // }
+        // rawSense.push(this.requestPrime(rulePrime,s)+this.requestCreakyTone(q,0,ruleExtract)+rawOver);
+      } else {
+        // let rawOver='';
+        // if (Number(q.substring(ruleExtract, q.length))){
+        //   rawOver=this.config.conjunction.over;
+        // }
+        // let leftOver = q.substring(ruleExtract, q.length);
+        // if (Number(leftOver)){
+        //   rawOver=this.config.conjunction.over;
+        //   // leftOver = q.substring(ruleExtract, q.length-s);
+        //   leftOver = q.substring(ruleExtract, q.length-s);
+        // }
+        // 1234567000000==100000*12300000+4567000000
+        // 1234567000000==100000*123 45670
+        // 1234567000000000==100000*12345 600000+7000 000000
+        // rawSense.push(this.requestPrime(rulePrime,s)+this.requestCreakyTone(q,0,ruleExtract)+rawOver);
+      }
     }
 
     return {
       sense:this.createString(rawSense),
-      // exam: examNotation
+      exam: examNotation
     };
   }
   requestObject(str,callback) {
