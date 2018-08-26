@@ -67,6 +67,7 @@ module.exports = class Notation {
     let ruleExtract = rawEndCount;
     let rulePrime = rawCount;
     let ruleMax = Object.keys(this.config.tone).length;
+    let rawSense=[];
 
     // let Measure=this.config.tone[s];
     // let ConjunctionPlus=this.config.conjunction.plus;
@@ -74,12 +75,9 @@ module.exports = class Notation {
     // let SuffixeMeasure='';
 
     let examNotation=false;
-    let rawSense=[], rawSenseName = ()=>{
-      rawSense.push(this.requestPrime(rulePrime,s,(rawCount < 3 && s != rawEndCount))+this.requestCreakyTone(q,0,ruleExtract));
-      rawSenseEach(q.substring(ruleExtract, q.length));
-      return this.createString(rawSense);
-    }, rawSenseEach = (k)=>{
+    let eachName = (k)=>{
       if (k && Number(k)){
+        // let ke = this.strSeparate(kr,s);
         let ks = (s*2)-2;
         let kr = k.substring(0,ks);
         let kp = this.requestPrime(1,s);
@@ -90,33 +88,43 @@ module.exports = class Notation {
         } else {
           rawSense.push(k1);
         }
-        rawSenseEach(k.substring(ks,k.length));
+        eachName(k.substring(ks,k.length));
       }
     }
-    // prime, base, baseName, rest, restName, tail, tailName
     if (rawCount < 3) {
       if (s == rawEndCount) {
         ruleExtract=rawCount;
+        // prime, base, baseName, rest, restName, tail, tailName
+        rawSense.push(this.requestPrime(rulePrime,s)+this.requestCreakyTone(q,0,ruleExtract));
+        rawSense.push(this.requestCreakyTone(q,rulePrime, s+1));
+        rawSense.push(this.requestWrittenTone(q,s+1, q.length));
         examNotation={test:1};
       } else {
-        rulePrime=1;
         if (rawCount > rawEndCount) {
           ruleExtract=rawCount;
         } else {
           ruleExtract=rawEndCount+1;
         }
+        rulePrime=1;
+        rawSense.push(this.requestPrime(rulePrime,s,true)+this.requestCreakyTone(q,0,ruleExtract));
+        rawSense.push(this.requestWrittenTone(q,ruleExtract, q.length));
         examNotation={test:2};
       }
     } else {
-      examNotation={ test:3, raw:raw};
       ruleExtract=rawCount-1+rawEndCount;
-      rulePrime=2;
+      rulePrime=rawCount-1;
       if (ruleExtract > ruleMax){
         ruleExtract=rawEndCount-3;
+        rulePrime=rawCount;
       }
+      rawSense.push(this.requestPrime(2,s)+this.requestCreakyTone(q,0,ruleExtract));
+      eachName(q.substring(ruleExtract, q.length));
+      examNotation={ test:2, raw:raw};
     }
+
     return {
-      sense:rawSenseName()//, exam: examNotation
+      sense:this.createString(rawSense),
+      // exam: examNotation
     };
   }
   requestObject(str,callback) {
@@ -194,6 +202,16 @@ module.exports = class Notation {
       return a.join(this.config.conjunction.space);
     }
   }
+  // createString_Org(n) {
+  //   return n.filter(function(e){return e}).join(this.config.conjunction.and)
+  // }
+  // createJoin(a) {
+  //   if (a.length > 1){
+  //     return a.slice(0, -1).join(',')+' and '+a.slice(-1);
+  //   } else {
+  //     return a.join(',')
+  //   }
+  // }
   strSeparate(str, n) {
     let e = new Array;
     for (let index=0; index < str.length; index += n) e.push(str.substr(index,n));
