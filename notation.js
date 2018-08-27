@@ -6,7 +6,7 @@ module.exports = class Notation {
       // 1:"ခု",
       tone:{1:"", 2:"ဆယ်", 3:"ရာ", 4:"ထောင်", 5:"သောင်း", 6:"သိန်း", 7:"သန်း", 8:"ကု​ဋေ​"},
       creaky:{2:"ဆယ့်",3:"ရာ့",4:"ထောင့်"},
-      conjunction:{space:" ",comma:"၊ ",and:"နှင့်",plus:"ပေါင်း",over:"ကျော်",times:"ကြိမ်":dot:"ဒဿမ"},
+      conjunction:{space:" ",comma:"၊ ",and:"နှင့်",plus:"ပေါင်း",over:"ကျော်",times:"ကြိမ်",dot:"ဒဿမ"},
       task:[6,7,8]
     }
   }
@@ -29,18 +29,17 @@ module.exports = class Notation {
     return {
       Numeric:(t)?n:this.requestDigit(n),
       Notation:this.config.task.map(k=>{
-        return this.requestTask(q,k);
+        return this.requestSense(q,k);
       }).filter(function(e){return e})
     };
   }
-  requestTask(q,s) {
+  requestSense(q,s) {
     if (q.length <= s) {
       if (this.config.task.length) {
         this.config.task=[];
         return {
-          // sense:this.requestCreakyTone(q)
           sense:this.requestWrittenTone(q)
-        }
+        };
       }
       return false;
     }

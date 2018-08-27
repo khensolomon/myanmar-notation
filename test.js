@@ -8,14 +8,12 @@ let query = process.argv.slice(2)[0];
 
 let test = new notation();
 let raw = test.get(query);
-raw.Query=query;
+// raw.Query=query;
 fs.writeFile("./test.json", JSON.stringify(raw, null, 2), 'utf8', function (err) {
     if (err) {
         return console.log(err);
     }
-    console.log(" ...done",new notation().config.name);
-    // let abc = test.requestPrime(1,6,true);
-    // console.log(abc);
+    console.log(" ...done");
 });
 /*
 100000
