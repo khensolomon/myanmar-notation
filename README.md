@@ -1,6 +1,12 @@
 # myanmar-notation
 ...`get()` Myanmar digital and notation
 
+[![Build Status][travis]][travis-url]
+[![code style: prettier][prettier]][prettier-url]
+[![npm][npm-download]][npm-dl-url]
+[![contributions welcome][contri]][contri-url]
+[![License: MIT][license]][license-url]
+
 Install `npm i myanmar-notation` then require...
 
 

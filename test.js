@@ -13,7 +13,7 @@ fs.writeFile("./test.json", JSON.stringify(raw, null, 2), 'utf8', function (err)
     if (err) {
         return console.log(err);
     }
-    console.log(" ...done");
+    console.log(" ...done",new notation().config.name);
     // let abc = test.requestPrime(1,6,true);
     // console.log(abc);
 });

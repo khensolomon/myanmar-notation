@@ -1,25 +1,21 @@
-let notation = require('./notation');
+let myanmarNotation = require('./notation');
 module.exports = {
   get:function (q) {
-    return new notation().get(q);
+    return new myanmarNotation().get(q);
   },
-  // getCreaky:function (q) {
-  // },
-  // getNormal:function (q) {
-  // },
   name:function () {
-    return new notation().configName();
+    return new myanmarNotation().config.name;
   },
   digit:function () {
-    return new notation().configDigit();
+    return new myanmarNotation().config.digit;
   },
   tone:function () {
-    return new notation().configTone();
+    return new myanmarNotation().config.tone;
   },
   creaky:function () {
-    return new notation().configCreaky();
+    return new myanmarNotation().config.creaky;
   },
   conjunction:function () {
-    return new notation().configConjunction();
+    return new myanmarNotation().config.conjunction;
   }
 };

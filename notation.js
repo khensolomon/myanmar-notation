@@ -6,24 +6,9 @@ module.exports = class Notation {
       // 1:"ခု",
       tone:{1:"", 2:"ဆယ်", 3:"ရာ", 4:"ထောင်", 5:"သောင်း", 6:"သိန်း", 7:"သန်း", 8:"ကု​ဋေ​"},
       creaky:{2:"ဆယ့်",3:"ရာ့",4:"ထောင့်"},
-      conjunction:{space:" ",comma:"၊ ",and:"နှင့်",plus:"ပေါင်း",over:"ကျော်",times:"ကြိမ်"},
+      conjunction:{space:" ",comma:"၊ ",and:"နှင့်",plus:"ပေါင်း",over:"ကျော်",times:"ကြိမ်":dot:"ဒဿမ"},
       task:[6,7,8]
     }
-  }
-  configName() {
-    return this.config.name;
-  }
-  configDigit() {
-    return this.config.digit;
-  }
-  configTone() {
-    return this.config.tone;
-  }
-  configCreaky() {
-    return this.config.creaky;
-  }
-  configConjunction() {
-    return this.config.conjunction;
   }
   get(query) {
     let q=Math.floor(Number(query.toString().replace(/,\s?/g, ""))).toString(),t=0;
@@ -82,10 +67,10 @@ module.exports = class Notation {
       if (k && Number(k)){
         let ks = (s*2)-2;
         let kr = k.substring(0,ks);
-        let kp = this.requestPrime(1,s);
         let k1 = this.requestWrittenTone(kr,0,s-1);
         let k2 = this.requestCreakyTone(kr,s-1,k1.length);
         if (k2){
+          let kp = this.requestPrime(1,s);
           rawSense.push(kp+k1+' '+k2);
         } else {
           rawSense.push(k1);
@@ -108,12 +93,12 @@ module.exports = class Notation {
         examNotation={test:2};
       }
     } else {
-      examNotation={ test:3, raw:raw};
       ruleExtract=rawCount-1+rawEndCount;
       rulePrime=2;
       if (ruleExtract > ruleMax){
         ruleExtract=rawEndCount-3;
       }
+      examNotation={test:3, raw:raw};
     }
     return {
       sense:rawSenseName()//, exam: examNotation
@@ -121,8 +106,6 @@ module.exports = class Notation {
   }
   requestObject(str,callback) {
     let strCount = str.length, e=[];
-    // let testing = this.config.tone.reverse()
-    // let strReverse = str.reverse(); index += to, ++index
     for (let index = 0; index < strCount;++index){
       let position = strCount - index;
       let digit = str[index], next = index+1;
@@ -157,7 +140,7 @@ module.exports = class Notation {
       return k.name+k.tone;
     }).join(pair);
   }
-  requestCreakyTail(num,from,to) {
+  requestCreakyTail(num,from,to,pair=' ') {
     let str = this.strIntersect(num,from,to);
     return this.requestObject(str,(position,next,tone)=>{
       if (str.hasOwnProperty(next) && this.config.creaky.hasOwnProperty(position) && str[next] > 0){
@@ -169,7 +152,7 @@ module.exports = class Notation {
         return k.name+k.tone.hasOwnProperty('creaky')?k.name+k.tone.creaky:k.name+k.tone.normal;
       }
       return k.name+k.tone.normal;
-    }).join(' ');
+    }).join(pair);
   }
   requestDigit(n) {
     return n.split('').map(k=>{
@@ -185,9 +168,8 @@ module.exports = class Notation {
     if (s)e.push('');
     return e.join(this.config.conjunction.plus+this.config.conjunction.space);
   }
-  createString(n) {
-    // return n.filter(function(e){return e}).join(this.config.conjunction.and+this.config.conjunction.space)
-    let a= n.filter(function(e){return e});
+  createString(a) {
+    // let a= n.filter(function(e){return e});
     if (a.length > 1){
       return a.slice(0, -1).join(this.config.conjunction.comma)+this.config.conjunction.and+this.config.conjunction.space+a.slice(-1);
     } else {
