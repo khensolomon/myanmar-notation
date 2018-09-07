@@ -10,7 +10,7 @@
 > Web
 
 ```html
-<script src="https://unpkg.com/mynum@latest/dist/web/mynum.min.js"></script>
+<script src="https://unpkg.com/myanmar-notation@latest/lib.js"></script>
 ```
 
 > Node.js
