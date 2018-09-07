@@ -89,7 +89,7 @@ strIntersect = (str:string,from:number=0,to:number=0) => {
     return str.split('');
   }
 },
-requestObject = (str:string,callback:any) => {
+requestTone = (str:string,callback:any) => {
   let strCount:number = str.length, e:any[]=[];
   for (let index = 0; index < strCount;++index){
     let position:number = strCount - index;
@@ -104,7 +104,7 @@ requestObject = (str:string,callback:any) => {
 },
 requestCreakyTone = (num:string,from:number=0,to:number=0,pair:string='') => {
   let str:any = strIntersect(num,from,to);
-  return requestObject(str,(position:number,next:number,tone:string)=>{
+  return requestTone(str,(position:number,next:number,tone:string)=>{
     if (str.hasOwnProperty(next) && str[next] > 0){
       return configuration.creaky.hasOwnProperty(position)?configuration.creaky[position]:tone;
     }
@@ -115,7 +115,7 @@ requestCreakyTone = (num:string,from:number=0,to:number=0,pair:string='') => {
 },
 requestWrittenTone = (num:string,from:number=0,to:number=0,pair:string='') => {
   let str:any = strIntersect(num,from,to);
-  return requestObject(str,(position:number,next:number,tone:string)=>{
+  return requestTone(str,(position:number,next:number,tone:string)=>{
     return tone;
   }).map((k,index,e)=>{
     // k:any,index:number,e:any
@@ -127,7 +127,7 @@ requestWrittenTone = (num:string,from:number=0,to:number=0,pair:string='') => {
 },
 requestCreakyTail = (num:string,from:number=0,to:number=0,pair:string=' ') => {
   let str:any = strIntersect(num,from,to);
-  return requestObject(str,(position:number,next:number,tone:string)=>{
+  return requestTone(str,(position:number,next:number,tone:string)=>{
     if (str.hasOwnProperty(next) && configuration.creaky.hasOwnProperty(position) && str[next] > 0){
       return {normal:tone, creaky:configuration.creaky[position]};
     }

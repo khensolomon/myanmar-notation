@@ -1,7 +1,7 @@
-import Notation from './notation';
+import myanmarNotation from './notation';
 export const Note:any = {
 	get:function(query: string){
-		return new Notation(query).get();
+		return new myanmarNotation(query).get();
 	}
 };
 export default Note;

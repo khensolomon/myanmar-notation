@@ -1,4 +1,5 @@
 /asset/
 /dist/
 /test/
+lib.js
 webpack.config.js

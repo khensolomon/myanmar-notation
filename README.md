@@ -3,11 +3,11 @@
 
 [![Build Status][travis]][travis-url]
 [![npm][npm-download]][npm-dl-url]
+[![Webpack][webpack-check]][webpack-url]
 ![Mocha][test-mocha]
-![Webpack][webpack-check]
 
 
-> Web
+> web
 
 ```html
 <script src="https://unpkg.com/myanmar-notation@latest/lib.js"></script>
@@ -72,11 +72,11 @@ notation.get('27,000,000.00');
 ```
 
 > Note
-
 [![License: MIT][license]][license-url]
 
 [test-mocha]: https://img.shields.io/badge/test-mocha-green.svg?longCache=true
 [webpack-check]: https://img.shields.io/badge/webpack-yes-green.svg?longCache=true
+[webpack-url]: https://unpkg.com/myanmar-notation@latest/lib.js
 [travis]: https://travis-ci.com/khensolomon/myanmar-notation.svg
 [travis-url]: https://travis-ci.org/khensolomon/myanmar-notation
 [npm-download]: https://img.shields.io/npm/dt/myanmar-notation.svg
