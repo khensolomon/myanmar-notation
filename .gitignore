@@ -6,9 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 
 /asset/*.js
-#package-lock.json
 /dist/
-lib.js
+*.js
+!webpack.config.js
 
 
 # Runtime data

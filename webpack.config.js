@@ -20,7 +20,7 @@ const clientConfig = {
 	},
 	output: {
 		// filename: 'myanmar-[name].min.js',
-		filename: 'lib.js',
+		filename: 'min.js',
 		path: path.resolve(__dirname),
 		library: 'myanmarNotation',
 		libraryTarget: 'window'

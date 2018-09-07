@@ -10,7 +10,7 @@
 > web
 
 ```html
-<script src="https://unpkg.com/myanmar-notation@latest/lib.js"></script>
+<script src="https://unpkg.com/myanmar-notation@latest/min.js"></script>
 ```
 
 > Node.js
@@ -20,7 +20,7 @@ Install `npm i myanmar-notation` then require...
 ```js
 let notation = require('myanmar-notation');
 ```
-... and get the result returned as Object if there is a sense in get query, otherwise Boolean (`false`) return.
+... and get the result returned as Object if there is a sense in get query, otherwise empty Object (`{}`) return.
 
 - [x] Return formatted Numeric
 - [x] Decimals are rounded (floor)
@@ -28,7 +28,7 @@ let notation = require('myanmar-notation');
 - [x] Convert into Typescript
 - [x] mocha
 - [x] Auto-load
-- [x] webpack: `https://unpkg.com/myanmar-notation@latest/lib.js`
+- [x] webpack: `https://unpkg.com/myanmar-notation@latest/min.js`
 
 ```js
 notation.get('2700');
@@ -71,7 +71,6 @@ notation.get('27,000,000.00');
 }
 ```
 
-> Note
 [![License: MIT][license]][license-url]
 
 [test-mocha]: https://img.shields.io/badge/test-mocha-green.svg?longCache=true
