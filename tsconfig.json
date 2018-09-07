@@ -13,13 +13,5 @@
 		"types": [
 			"node"
 		]
-	},
-
-  "include": [
-    "./assets/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "test"
-  ]
+	}
 }
