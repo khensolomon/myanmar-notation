@@ -19,7 +19,7 @@ responseSense = (q:string,s:number) => {
   // let PrefixeTimes='';
   // let SuffixeMeasure='';
 
-  let examNotation:any={};
+  let rawExam:any={};
   let rawSense:any=[];
   const rawSenseName = ()=>{
     rawSense.push(requestPrime(rulePrime,s,(rawCount < 3 && s != rawEndCount))+requestCreakyTone(q,0,ruleExtract));
@@ -44,7 +44,7 @@ responseSense = (q:string,s:number) => {
   if (rawCount < 3) {
     if (s == rawEndCount) {
       ruleExtract=rawCount;
-      examNotation={test:1};
+      rawExam={test:1};
     } else {
       rulePrime=1;
       if (rawCount > rawEndCount) {
@@ -52,7 +52,7 @@ responseSense = (q:string,s:number) => {
       } else {
         ruleExtract=rawEndCount+1;
       }
-      examNotation={test:2};
+      rawExam={test:2};
     }
   } else {
     ruleExtract=rawCount-1+rawEndCount;
@@ -60,9 +60,9 @@ responseSense = (q:string,s:number) => {
     if (ruleExtract > ruleMax){
       ruleExtract=rawEndCount-3;
     }
-    examNotation={test:3, raw:raw};
+    rawExam={test:3, raw:raw};
   }
-  return {sense:rawSenseName()/*, exam: examNotation*/};
+  return {sense:rawSenseName()/*, exam: rawExam*/};
 },
 requestPrime = (l:number,k:number,s:boolean=false) => {
   let i=0, e=[];
