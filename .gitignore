@@ -8,7 +8,6 @@ yarn-error.log*
 /asset/*.js
 /dist/
 *.js
-!webpack.config.js
 
 
 # Runtime data

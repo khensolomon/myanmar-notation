@@ -28,7 +28,7 @@ let notation = require('myanmar-notation');
 - [x] Convert into Typescript
 - [x] mocha
 - [x] Auto-load
-- [x] webpack: `https://unpkg.com/myanmar-notation@latest/min.js`
+- [x] webpack
 
 ```js
 notation.get('2700');
@@ -75,7 +75,7 @@ notation.get('27,000,000.00');
 
 [test-mocha]: https://img.shields.io/badge/test-mocha-green.svg?longCache=true
 [webpack-check]: https://img.shields.io/badge/webpack-yes-green.svg?longCache=true
-[webpack-url]: https://unpkg.com/myanmar-notation@latest/lib.js
+[webpack-url]: https://unpkg.com/myanmar-notation@latest/min.js
 [travis]: https://travis-ci.com/khensolomon/myanmar-notation.svg
 [travis-url]: https://travis-ci.org/khensolomon/myanmar-notation
 [npm-download]: https://img.shields.io/npm/dt/myanmar-notation.svg
