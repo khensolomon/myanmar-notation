@@ -1,5 +1,4 @@
-// import Note from '../assets/';
-import notation from '../assets/';
+import notation from '../asset/';
 import * as assert from 'assert';
 
 import 'mocha';
