@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha -r ts-node/register test/index.spec.ts",
     "test:js": "node test/test",
-    "build": "tsc"
+    "build:tsc": "tsc",
+    "build": "node test/build"
   },
   "repository": {
     "type": "git",
