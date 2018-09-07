@@ -4,7 +4,7 @@ const clientConfig = {
 	target: 'web',
 	mode: 'production',
 	entry: {
-		notation: './assets/index.ts'
+		notation: './asset/index.ts'
 	},
 	module: {
 		rules: [
@@ -19,8 +19,9 @@ const clientConfig = {
 		extensions: ['.ts']
 	},
 	output: {
-		filename: '[name].min.js',
-		path: path.resolve(__dirname, 'dist/web'),
+		// filename: 'myanmar-[name].min.js',
+		filename: 'lib.js',
+		path: path.resolve(__dirname),
 		library: 'myanmarNotation',
 		libraryTarget: 'window'
 	}

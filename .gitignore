@@ -5,9 +5,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/assets/*.js
+/asset/*.js
 #package-lock.json
 /dist/
+lib.js
 
 
 # Runtime data

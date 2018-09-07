@@ -3,6 +3,12 @@
 
 > ...
 
+
+
+`https://unpkg.com/myanmar-notation@latest/dist/lib.js`
+`https://unpkg.com/myanmar-notation@latest/lib.js`
+
+
 [![Build Status](https://travis-ci.com/khensolomon/myanmar-notation.svg?branch=master)](https://travis-ci.com/khensolomon/myanmar-notation)
 
 Install `npm i myanmar-notation` then require...
