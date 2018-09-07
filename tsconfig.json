@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "CommonJS",
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"esModuleInterop": true,
+		"declaration": false,
+		"pretty":false,
+		"outDir": "./",
+		"types": [
+			"node"
+		]
+	},
+
+  "include": [
+    "assets/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "test",
+    "dist"
+  ]
+}
