@@ -2,14 +2,14 @@
 	"compilerOptions": {
 		"target": "ES5",
 		"module": "CommonJS",
+		"strict": true,
+		"outDir": "dist",
 		"noImplicitAny": true,
 		"removeComments": true,
 		"preserveConstEnums": true,
 		"esModuleInterop": true,
 		"declaration": false,
 		"pretty":true,
-		"strict": true,
-		"outDir": "./",
 		"types": [
 			"node"
 		]
