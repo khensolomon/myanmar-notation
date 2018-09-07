@@ -5,8 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-assets/*.js
-dist/
+/assets/*.js
+/dist/
 
 # Runtime data
 pids
