@@ -1,4 +1,4 @@
-import {Notation} from './notation';
+import Notation from './notation';
 
 // const get = (query: any) =>{
 // 	let note:any = new Notation;
@@ -31,5 +31,4 @@ export const Note:any = {
 // export const notation:any = Notation;
 export default Note;
 module.exports = Note;
-// module.exports.Note = Note;
 module.exports.default = Note;

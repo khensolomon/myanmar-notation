@@ -5,10 +5,10 @@ node_js:
 
 deploy:
   provider: script
-  script: "npm run build"
+  script: "npm publish"
   skip_cleanup: true
   on:
-    tags: false
+    tags: true
 
 notifications:
   email:
