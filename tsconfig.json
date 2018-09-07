@@ -6,8 +6,8 @@
 		"removeComments": true,
 		"preserveConstEnums": true,
 		"esModuleInterop": true,
-		"declaration": true,
-		"pretty":false,
+		"declaration": false,
+		"pretty":true,
 		"strict": true,
 		"outDir": "./",
 		"types": [
@@ -16,11 +16,10 @@
 	},
 
   "include": [
-    "assets/*.ts"
+    "./assets/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "test",
-    "dist"
+    "test"
   ]
 }

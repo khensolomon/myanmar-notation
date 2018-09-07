@@ -141,17 +141,13 @@ requestCreakyTail = (num:string,from:number=0,to:number=0,pair:string=' ') => {
 };
 export class Notation {
   private assignment:number[] = [6,7,8];
-  private query:string;
+  private query:string='';
   private note:any={};
   constructor(q: string) {
-    if (q)this.clean(q);
-    if (this.query) {
+    if (this.clean(q)) {
       this.note.number = this.digit();
     } else {
-      this.clean(q.split('').map(k => configuration.digit.indexOf(k)).filter(e => e >= 0).join(''));
-      // this.clean(q.split('').map(k => configuration.digit.indexOf(k)).filter(e => e == 0 || e).join(''));
-      // this.clean(q.split('').map(k => configuration.digit.indexOf(k) >= 0?configuration.digit.indexOf(k):k).filter(e => e >= 0).join(''));
-      if (this.query) this.note.number = this.format();
+      if (this.clean(q.split('').map(k => configuration.digit.indexOf(k)).filter(e => e >= 0).join('')))this.note.number = this.format();
     }
   }
   get result(): any {
@@ -172,7 +168,7 @@ export class Notation {
   }
   clean(q:string) {
     let k:number = Math.floor(Number(q.toString().replace(/,\s?/g, '')));
-    if (k>0) this.query = k.toString();
+    if (k>0) return this.query = k.toString();
   }
 };
 export default Notation;
