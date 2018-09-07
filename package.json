@@ -1,13 +1,13 @@
 {
   "name": "myanmar-notation",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "get Myanmar digital and notation",
   "main": "index.js",
   "scripts": {
     "test": "mocha -r ts-node/register test/index.spec.ts",
     "test:js": "node test/test",
-    "build:tsc": "tsc",
-    "build": "node test/build && npm run build:tsc"
+    "tsc": "tsc",
+    "build": "node test/build && npm run tsc"
   },
   "repository": {
     "type": "git",
