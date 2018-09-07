@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
 		"target": "ES5",
-		"module": "CommonJS",
-		"strict": true,
+		"module": "commonjs",
 		"outDir": "./",
+		"strict": true,
 		"noImplicitAny": true,
 		"removeComments": true,
 		"preserveConstEnums": true,
@@ -15,7 +15,7 @@
 		]
 	},
 	"include": [
-	  "./assets/*.ts"
+	  "assets/*.ts"
 	],
 	"exclude": [
 	  "node_modules",

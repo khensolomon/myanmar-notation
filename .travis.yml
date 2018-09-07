@@ -5,15 +5,8 @@ node_js:
 
 deploy:
   provider: script
-  script: "npm publish"
+  script: "npm run build"
   skip_cleanup: true
   on:
     tags: true
-     all_branches: true
-
-notifications:
-  email:
-    recipients:
-    - khensolomon@gmail.com
-    on_success: change
-    on_failure: always
+    all_branches: true

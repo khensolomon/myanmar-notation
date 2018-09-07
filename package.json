@@ -1,6 +1,6 @@
 {
   "name": "myanmar-notation",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "get Myanmar digital and notation",
   "main": "index.js",
   "scripts": {
