@@ -6,8 +6,9 @@
 		"removeComments": true,
 		"preserveConstEnums": true,
 		"esModuleInterop": true,
-		"declaration": false,
+		"declaration": true,
 		"pretty":false,
+		"strict": true,
 		"outDir": "./",
 		"types": [
 			"node"
