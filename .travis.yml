@@ -8,7 +8,7 @@ deploy:
   script: "npm run build"
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
 
 notifications:
   email:
