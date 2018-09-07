@@ -5,8 +5,8 @@
 /.git export-ignore
 
 
-test/* export-ignore
-assets/* export-ignore
+/test export-ignore
+/assets export-ignore
 
 .editorconfig export-ignore
 .gitattributes export-ignore
