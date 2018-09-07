@@ -1,14 +1,15 @@
 {
   "name": "myanmar-notation",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "get Myanmar digital and notation",
-  "main": "index.js",
+  "main": "dist/node/index.js",
   "types": "index.d.ts",
   "scripts": {
     "test": "mocha -r ts-node/register test/index.spec.ts",
     "test:js": "node test/test",
-    "build:tsc": "tsc",
-    "build": "npm run build:tsc"
+    "build:mod": "tsc",
+    "build:web": "webpack",
+    "build": "npm run build:web && npm run build:mod"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
   "bugs": {
     "url": "https://github.com/khensolomon/myanmar-notation/issues"
   },
+  "files":[
+    "dist/mod/*",
+    "dist/web/*.js"
+  ],
   "author": "Khen Solomon Lethil",
   "license": "MIT",
   "homepage": "https://github.com/khensolomon/myanmar-notation#readme",
@@ -34,6 +39,8 @@
     "mocha": "^5.2.0",
     "ts-loader": "^5.0.0",
     "ts-node": "^7.0.1",
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   }
 }
