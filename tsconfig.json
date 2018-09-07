@@ -16,7 +16,7 @@
 	},
 
   "include": [
-    "assets/index.ts"
+    "assets/*.ts"
   ],
   "exclude": [
     "node_modules",

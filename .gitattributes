@@ -4,8 +4,8 @@
 # Scriptive excluded
 /.git export-ignore
 
-/test.* export-ignore
-test/* export-ignore
+
+test/ export-ignore
 
 .editorconfig export-ignore
 .gitattributes export-ignore
