@@ -3,4 +3,4 @@ node_js:
   - "node"
   - "lts/*"
 before_script:
-  - tsc
+  - npm run build
