@@ -10,4 +10,3 @@ export const digit:string[] = configuration.digit;
 export const tone:any = configuration.tone;
 export const creaky:any = configuration.creaky;
 export const conjunction:any = configuration.conjunction;
-// export default configurations;

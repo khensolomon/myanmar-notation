@@ -134,25 +134,24 @@ requestCreakyTail = (num:string,from:number=0,to:number=0,pair:string=' ') => {
     return k.name+k.tone.normal;
   }).join(pair);
 };
-// export namespace myanmar {}
 export class Notation {
   private assignment:number[] = [6,7,8];
   private query:string='';
   private note:any={};
-  constructor(q: string) {
+  constructor(q:string) {
     if (this.clean(q)) {
       this.note.number = this.digit();
-    } else {
-      if (this.clean(q.split('').map(k => $.digit.indexOf(k)).filter(e => e >= 0).join('')))this.note.number = this.format();
+    } else if (this.clean(q.split('').map(k => $.digit.indexOf(k)).filter(e => e >= 0).join(''))) {
+      this.note.number = this.format();
     }
   }
   get result(): any {
     return this.get();
   }
   get number(): string {
-    return this.note.hasOwnProperty('number')?this.note.number:null;
+    return this.note.hasOwnProperty('number')?this.note.number:false;
   }
-  get():any {
+  get() {
     if (this.query) this.note.notation = requestSense(this.query,this.assignment,this.query.length);
     return this.note;
   }
@@ -164,6 +163,6 @@ export class Notation {
   }
   clean(q:string) {
     let k:number = Math.floor(Number(q.toString().replace(/,\s?/g, '')));
-    if (k>0) return this.query = k.toString();
+    return this.query = k>0?k.toString():'';
   }
 }

@@ -4,6 +4,7 @@ const fs = require('fs');
 // const notation = require('../notation');
 const notation = require('../');
 let query = process.argv.slice(2)[0];
+
 // query = '123456781234567876000';
 // query = '27,000,000.00';
 // query = '၁,၂၀၀၀၀၀.၂ဝ';

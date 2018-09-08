@@ -7,21 +7,6 @@
 ![Mocha][test-mocha]
 
 
-> web
-
-```html
-<script src="https://unpkg.com/myanmar-notation@latest/min.js"></script>
-```
-
-> Node.js
-
-Install `npm i myanmar-notation` then require...
-
-```js
-let notation = require('myanmar-notation');
-```
-... and get the result returned as Object if there is a sense in get query, otherwise empty Object (`{}`) return.
-
 - [x] Return formatted Numeric
 - [x] Decimals are rounded (floor)
 - [x] Query `get(2700)`, `get('၂၇၀၀')`, `get('27,000,000.00')` is flexible
@@ -30,8 +15,45 @@ let notation = require('myanmar-notation');
 - [x] Auto-load
 - [x] webpack
 
+
+# Web
+> In your web Application point `myanmarNotation`...
+
 ```js
-notation.get('2700');
+<script src="https://unpkg.com/myanmar-notation@latest/min.js"></script>
+```
+> ... then
+
+```js
+myanmarNotation.get(12345678);
+// return
+{
+  "number": "၁၂,၃၄၅,၆၇၈",
+  "notation": [
+    {
+      "sense": "သိန်းပေါင်း တစ်ရာ့နှစ်ဆယ့်သုံးနှင့် လေးသောင်းငါးထောင်ခြောက်ရာခုနစ်ဆယ်နှင့်ရှစ်"
+    },
+    {
+      "sense": "သန်းပေါင်း တစ်ဆယ့်နှစ်နှင့် သုံးသိန်းလေးသောင်းငါးထောင်ခြောက်ရာခုနစ်ဆယ်နှင့်ရှစ်"
+    },
+    {
+      "sense": "တစ်ကု​ဋေ​နှစ်သန်းသုံးသိန်းလေးသောင်းငါးထောင်ခြောက်ရာခုနစ်ဆယ်နှင့်ရှစ်"
+    }
+  ]
+}
+```
+
+# Node.js
+
+> Install `npm i myanmar-notation` then require...
+
+```js
+let notation = require('myanmar-notation');
+```
+> ... and get the result returned as Object if there is a sense in get query, otherwise empty Object (`{}`) return.
+
+```js
+notation.get(2700);
 // return
 {
   "number": "၂,၇၀၀",
