@@ -7,7 +7,9 @@ yarn-error.log*
 
 /asset/*.js
 /dist/
-*.js
+/*.js
+/*.ts
+!*.config.js
 
 
 # Runtime data

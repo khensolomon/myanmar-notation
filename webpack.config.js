@@ -10,7 +10,8 @@ const clientConfig = {
 		rules: [
 			{
 				test: /\.ts?$/,
-				use: 'ts-loader',
+				// use: 'ts-loader',
+				loader: 'ts-loader',
 				exclude: /node_modules/
 			}
 		]

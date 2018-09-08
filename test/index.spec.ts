@@ -8,9 +8,9 @@ describe('Notation', () => {
 		const job = notation.get('Non-numeric');
 		assert.ok(Object.keys(job).length == 0);
 	});
-	it('123 should returned {number} ၁၂၃', () => {
-		const job = notation.get('123');
-		assert.equal('၁၂၃',job.number);
+	it('1230 should returned {number} ၁၂၃၀', () => {
+		const job = notation.get('1230');
+		assert.equal('၁,၂၃၀',job.number);
 	});
 	it('၁၂၀၀,၀၀၀.၀ == 12,000,000 as removed decimals', () => {
 		const job = notation.get('၁၂၀၀,၀၀၀.၀');

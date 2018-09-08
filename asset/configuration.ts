@@ -1,4 +1,4 @@
-export const configuration: any = {
+const configuration:any = {
   name:["သုည","တစ်","နှစ်","သုံး","လေး","ငါး","ခြောက်","ခုနစ်","ရှစ်","ကိုး"],
   digit:["၀","၁","၂","၃","၄","၅","၆","၇","၈","၉"],
   tone:{1:""/*"ခု"*/, 2:"ဆယ်", 3:"ရာ", 4:"ထောင်", 5:"သောင်း", 6:"သိန်း", 7:"သန်း", 8:"ကု​ဋေ​"},
@@ -7,7 +7,7 @@ export const configuration: any = {
 };
 export const name:string[] = configuration.name;
 export const digit:string[] = configuration.digit;
-export const tone:object = configuration.tone;
-export const creaky:object = configuration.creaky;
-export const conjunction:object = configuration.conjunction;
-export default configuration;
+export const tone:any = configuration.tone;
+export const creaky:any = configuration.creaky;
+export const conjunction:any = configuration.conjunction;
+// export default configurations;

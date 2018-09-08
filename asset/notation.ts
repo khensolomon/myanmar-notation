@@ -1,4 +1,4 @@
-import {configuration} from './configuration';
+import * as $ from './configuration';
 const requestSense = (q:string,taskMain:number[],taskMin:number) => {
   if (taskMin <= Math.min.apply(Math, taskMain)) taskMain=[taskMin];
   return taskMain.map(k=>taskMin>=k?responseSense(q,k):false).filter(e => e);
@@ -12,12 +12,7 @@ responseSense = (q:string,s:number) => {
 
   let ruleExtract:number = rawEndCount;
   let rulePrime:number = rawCount;
-  let ruleMax:number = Object.keys(configuration.tone).length;
-
-  // let Measure=configuration.tone[s];
-  // let ConjunctionPlus=configuration.conjunction.plus;
-  // let PrefixeTimes='';
-  // let SuffixeMeasure='';
+  let ruleMax:number = Object.keys($.tone).length;
 
   let rawExam:any={};
   let rawSense:any=[];
@@ -66,15 +61,15 @@ responseSense = (q:string,s:number) => {
 },
 requestPrime = (l:number,k:number,s:boolean=false) => {
   let i=0, e=[];
-  while( i < l) { e.push(configuration.tone[k]); i++;}
+  while( i < l) { e.push($.tone[k]); i++;}
   if (s)e.push('');
-  return e.join(configuration.conjunction.plus+configuration.conjunction.space);
+  return e.join($.conjunction.plus+$.conjunction.space);
 },
 createString = (a:any[]) => {
   if (a.length > 1){
-    return a.slice(0, -1).join(configuration.conjunction.comma)+configuration.conjunction.and+configuration.conjunction.space+a.slice(-1);
+    return a.slice(0, -1).join($.conjunction.comma)+$.conjunction.and+$.conjunction.space+a.slice(-1);
   } else {
-    return a.join(configuration.conjunction.space);
+    return a.join($.conjunction.space);
   }
 },
 strSeparate = (str:string, n:number) => {
@@ -94,9 +89,9 @@ requestTone = (str:string,callback:any) => {
   for (let index = 0; index < strCount;++index){
     let position:number = strCount - index;
     let digit:any = str[index], next:number = index+1;
-    let tone:string = configuration.tone.hasOwnProperty(position)?configuration.tone[position]:'';
+    let tone:string = $.tone.hasOwnProperty(position)?$.tone[position]:'';
     if (digit > 0)e.push({
-      name:configuration.name[digit],
+      name:$.name[digit],
       tone:callback(position,next,tone)
     });
   }
@@ -106,7 +101,7 @@ requestCreakyTone = (num:string,from:number=0,to:number=0,pair:string='') => {
   let str:any = strIntersect(num,from,to);
   return requestTone(str,(position:number,next:number,tone:string)=>{
     if (str.hasOwnProperty(next) && str[next] > 0){
-      return configuration.creaky.hasOwnProperty(position)?configuration.creaky[position]:tone;
+      return $.creaky.hasOwnProperty(position)?$.creaky[position]:tone;
     }
     return tone;
   }).map((k,index)=>{
@@ -120,7 +115,7 @@ requestWrittenTone = (num:string,from:number=0,to:number=0,pair:string='') => {
   }).map((k,index,e)=>{
     // k:any,index:number,e:any
     if ((e.length - 2) == index) {
-      return k.name+k.tone+configuration.conjunction.and;
+      return k.name+k.tone+$.conjunction.and;
     }
     return k.name+k.tone;
   }).join(pair);
@@ -128,8 +123,8 @@ requestWrittenTone = (num:string,from:number=0,to:number=0,pair:string='') => {
 requestCreakyTail = (num:string,from:number=0,to:number=0,pair:string=' ') => {
   let str:any = strIntersect(num,from,to);
   return requestTone(str,(position:number,next:number,tone:string)=>{
-    if (str.hasOwnProperty(next) && configuration.creaky.hasOwnProperty(position) && str[next] > 0){
-      return {normal:tone, creaky:configuration.creaky[position]};
+    if (str.hasOwnProperty(next) && $.creaky.hasOwnProperty(position) && str[next] > 0){
+      return {normal:tone, creaky:$.creaky[position]};
     }
     return {normal:tone};
   }).map((k,index,e)=>{
@@ -139,6 +134,7 @@ requestCreakyTail = (num:string,from:number=0,to:number=0,pair:string=' ') => {
     return k.name+k.tone.normal;
   }).join(pair);
 };
+// export namespace myanmar {}
 export class Notation {
   private assignment:number[] = [6,7,8];
   private query:string='';
@@ -147,7 +143,7 @@ export class Notation {
     if (this.clean(q)) {
       this.note.number = this.digit();
     } else {
-      if (this.clean(q.split('').map(k => configuration.digit.indexOf(k)).filter(e => e >= 0).join('')))this.note.number = this.format();
+      if (this.clean(q.split('').map(k => $.digit.indexOf(k)).filter(e => e >= 0).join('')))this.note.number = this.format();
     }
   }
   get result(): any {
@@ -161,7 +157,7 @@ export class Notation {
     return this.note;
   }
   digit() {
-    return this.format().split('').map((k:string)=>configuration.digit.hasOwnProperty(k)?configuration.digit[k]:k).join('');
+    return this.format().split('').map(k=>$.digit[parseInt(k)]||k).join('');
   }
   format() {
     return this.query.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
@@ -170,5 +166,4 @@ export class Notation {
     let k:number = Math.floor(Number(q.toString().replace(/,\s?/g, '')));
     if (k>0) return this.query = k.toString();
   }
-};
-export default Notation;
+}
