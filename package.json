@@ -1,9 +1,10 @@
 {
   "name": "myanmar-notation",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "description": "get Myanmar digital and notation",
   "main": "index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "test": "mocha -r ts-node/register test/index.spec.ts",
     "js": "node test/package",
     "build:node": "tsc",

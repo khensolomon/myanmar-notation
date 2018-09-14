@@ -5,27 +5,27 @@ const requestSense = (q:string,taskMain:number[],taskMin:number) => {
 },
 responseSense = (q:string,s:number) => {
   if (q.length <= s) return {sense: requestWrittenTone(q)};
-  let raw:any[number] = strSeparate(q,s);
-  let rawCount:number = raw.length;
-  let rawEnd:string = raw.slice(-1)[0];
-  let rawEndCount:number = rawEnd.length;
+  let raw:any[number] = strSeparate(q,s),
+      rawCount:number = raw.length,
+      rawEnd:string = raw.slice(-1)[0],
+      rawEndCount:number = rawEnd.length,
+      rawExam:any={},
+      rawSense:any=[],
+      // NOTE: rules
+      ruleExtract:number = rawEndCount,
+      rulePrime:number = rawCount,
+      ruleMax:number = Object.keys($.tone).length;
 
-  let ruleExtract:number = rawEndCount;
-  let rulePrime:number = rawCount;
-  let ruleMax:number = Object.keys($.tone).length;
-
-  let rawExam:any={};
-  let rawSense:any=[];
-  const rawSenseName = ()=>{
+  let rawSenseName = ()=>{
     rawSense.push(requestPrime(rulePrime,s,(rawCount < 3 && s != rawEndCount))+requestCreakyTone(q,0,ruleExtract));
     rawSenseEach(q.substring(ruleExtract, q.length));
     return createString(rawSense);
   }, rawSenseEach = (k:any)=>{
     if (k && Number(k)){
-      let ks = (s*2)-2;
-      let kr = k.substring(0,ks);
-      let k1 = requestWrittenTone(kr,0,s-1);
-      let k2 = requestCreakyTone(kr,s-1,k1.length);
+      let ks = (s*2)-2,
+          kr = k.substring(0,ks),
+          k1 = requestWrittenTone(kr,0,s-1),
+          k2 = requestCreakyTone(kr,s-1,k1.length);
       if (k2){
         let kp = requestPrime(1,s);
         rawSense.push(kp+k1+' '+k2);
