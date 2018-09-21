@@ -9,7 +9,7 @@
 
 - [x] Return formatted Numeric
 - [x] Decimals are rounded (floor)
-- [x] Query `get(2700)`, `get('၂၇၀၀')`, `get('27,000,000.00')` is flexible
+- [x] Query `get(2700)`, `get('၂၇၀၀')`, `get('27,000,000.00')` ,`get('5.23e+8')` is flexible
 - [x] Convert into Typescript
 - [x] mocha
 - [x] Auto-load
@@ -88,6 +88,23 @@ notation.get('27,000,000.00');
     },
     {
       "sense": "နှစ်ကု​ဋေ​နှင့်ခုနစ်သန်း"
+    }
+  ]
+}
+
+notation.get('5.23e+8');
+// return
+{
+  "number": "၅၂၃,၀၀၀,၀၀၀",
+  "notation": [
+    {
+      "sense": "သိန်းပေါင်း ငါးထောင့်နှစ်ရာ့သုံးဆယ်"
+    },
+    {
+      "sense": "သန်းပေါင်း ငါးရာ့နှစ်ဆယ့်သုံး"
+    },
+    {
+      "sense": "ကု​ဋေ​ပေါင်း ငါးဆယ့်နှစ်နှင့် သုံးသန်း"
     }
   ]
 }

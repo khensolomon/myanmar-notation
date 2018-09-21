@@ -10,6 +10,7 @@ let query = process.argv.slice(2)[0];
 // query = '၁,၂၀၀၀၀၀.၂ဝ';
 // query = '၂၇၀၀';
 // query = '၂,၇၀၀';
+query = '5.23e+8';
 
 let raw = notation.get(query);
 fs.writeFile("./test/package.json", JSON.stringify(raw, null, 2), 'utf8', e=>console.log(e || "...done"));

@@ -16,14 +16,12 @@ describe('Notation', () => {
 		const job = notation.get('၁၂၀၀,၀၀၀.၀');
 		assert.equal('12,000,000',job.number);
 	});
-
-	// it('12345678 should have 3 senses', () => {
-	// 	const job = notation.get('12345678');
-	// 	assert.ok(job.notation.length == 3);
-	// });
+	it('1.23e+5 == ၁၂၃,၀၀၀', () => {
+		const job = notation.get('1.23e+5');
+		assert.equal('၁၂၃,၀၀၀',job.number);
+	});
 	describe("var job = notation.get('12345678')", () => {
 		const job = notation.get('12345678');
-		// console.log(job);
 		it('job.number:String should be ၁၂,၃၄၅,၆၇၈', () => {
 			assert.equal('၁၂,၃၄၅,၆၇၈',job.number);
 		});
@@ -41,14 +39,5 @@ describe('Notation', () => {
 				assert.ok(job.notation[2].sense);
 			});
 		});
-
-
-		// job
 	});
-	// it('Hello world', () => {
-	// 	const query = '10000000';
-	// 	const {hello} = notation;
-	// 	console.log(hello);
-	// 	assert.ok(hello);
-	// });
 });

@@ -139,7 +139,7 @@ export class Notation {
   private query:string='';
   private note:any={};
   constructor(q:string) {
-    if (this.clean(q)) {
+    if (this.clean(Number.parseFloat(q).toFixed())) {
       this.note.number = this.digit();
     } else if (this.clean(q.split('').map(k => $.digit.indexOf(k)).filter(e => e >= 0).join(''))) {
       this.note.number = this.format();
