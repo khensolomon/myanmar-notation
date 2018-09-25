@@ -159,7 +159,8 @@ export class Notation {
     return this.format().split('').map(k=>$.digit[parseInt(k)]||k).join('');
   }
   format() {
-    return this.query.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    // return this.query.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    return this.query;
   }
   clean(q:string) {
     let k:number = Math.floor(Number(q.toString().replace(/,\s?/g, '')));

@@ -15,7 +15,6 @@
 - [x] Auto-load
 - [x] webpack
 
-
 # Web
 > In your web Application point `myanmarNotation`...
 
