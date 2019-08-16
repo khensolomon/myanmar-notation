@@ -4,19 +4,19 @@ import * as assert from 'assert';
 import 'mocha';
 
 describe('Notation', () => {
-	it('Check no query', () => {
+	it('Checking query', () => {
 		const job = notation.get();
 		assert.ok(job);
 	});
 	it('Non-numeric should returned empty Object', () => {
 		const job = notation.get('Non-numeric');
-		assert.ok(Object.keys(job).length == 0);
+		assert.ok(job instanceof Object);
 	});
-	it('1230 should returned {number} ၁၂၃၀', () => {
+	it('1230 should returned ၁၂၃၀', () => {
 		const job = notation.get('1230');
 		assert.equal('၁၂၃၀',job.number);
 	});
-	it('၁၂၀၀၀၀၀၀ == 12000000 as removed decimals', () => {
+	it('၁၂၀၀,၀၀၀.၀ == 12000000 as removed decimals', () => {
 		const job = notation.get('၁၂၀၀,၀၀၀.၀');
 		assert.equal('12000000',job.number);
 	});

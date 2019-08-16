@@ -3,3 +3,4 @@
 /test/
 min.js
 webpack.config.js
+*-lock.json

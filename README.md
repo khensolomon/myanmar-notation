@@ -1,11 +1,11 @@
 # myanmar-notation
+
 ...`get()` Myanmar digital and notation
 
 [![Build Status][travis]][travis-url]
 [![npm][npm-download]][npm-dl-url]
 [![Webpack][webpack-check]][webpack-url]
 ![Mocha][test-mocha]
-
 
 - [x] Return formatted Numeric
 - [x] Decimals are rounded (floor)
@@ -15,12 +15,14 @@
 - [x] Auto-load
 - [x] webpack
 
-# Web
+## Web
+
 > In your web Application point `myanmarNotation`...
 
 ```js
 <script src="https://unpkg.com/myanmar-notation@latest/min.js"></script>
 ```
+
 > ... then
 
 ```js
@@ -42,13 +44,14 @@ myanmarNotation.get(12345678);
 }
 ```
 
-# Node.js
+## Node.js
 
 > Install `npm i myanmar-notation` then require...
 
 ```js
 let notation = require('myanmar-notation');
 ```
+
 > ... and get the result returned as Object if there is a sense in get query, otherwise empty Object (`{}`) return.
 
 ```js

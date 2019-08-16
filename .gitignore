@@ -2,6 +2,7 @@
 /*.js
 /*.ts
 !*.config.js
+*-lock.json
 
 # Logs
 logs

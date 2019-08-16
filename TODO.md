@@ -30,3 +30,12 @@
   - [ ] 1 * 10`126`	ကထာန
   - [ ] 1 * 10`133`	မဟာကထာန
   - [ ] 1 * 10`140`	အသင်္ချေ
+
+
+## development
+
+```shell
+npm install -g mocha
+npm install -g typescript
+npm install -g ts-node
+```
