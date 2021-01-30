@@ -112,6 +112,26 @@ notation.get('5.23e+8');
 }
 ```
 
+## ESM
+
+```js
+import notation from 'myanmar-notation';
+import {myanmarNotation} from 'myanmar-notation';
+
+notation.get('90');
+myanmarNotation('100');
+```
+
+## Commonjs
+
+```js
+const notation = require('myanmar-notation');
+const {myanmarNotation} = require('myanmar-notation');
+
+notation.get('90');
+myanmarNotation('100');
+```
+
 > NOTE: `type` attribute in package should be `commonjs` before publishing to npm, but the package itself is a module so testing, developing must be alway `module`.
 
 [![License: MIT][license]][license-url]
