@@ -1,12 +1,12 @@
 {
   "name": "myanmar-notation",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "get Myanmar digital and notation",
   "main": "index",
   "types": "index",
   "type": "module",
   "scripts": {
-    "prepublish": "npm run build",
+    "-prepublish": "npm run build",
     "build": "npm run build:web && npm run build:node",
     "build:node": "tsc",
     "build:web": "node webpack.build.js",
