@@ -1,61 +1,47 @@
-const path = require('path');
-const clientConfig = {
-	target: 'web',
-	mode: 'production',
-	entry: {
-		notation: './asset/index.ts'
-	},
-	module: {
-		rules: [
-			{
-				test: /\.ts?$/,
-				// use: 'ts-loader',
-				loader: 'ts-loader',
-				exclude: /node_modules/
-			}
-		]
-	},
-	resolve: {
-		extensions: ['.ts']
-	},
-	output: {
-		// filename: 'myanmar-[name].min.js',
-		filename: 'min.js',
-		path: path.resolve(__dirname),
-		library: 'myanmarNotation',
-		libraryTarget: 'window'
-	}
-};
-/*
-// webpack --module-bind 'node=node-loader'
-const packageConfig = {
-	target: "node",
-	mode: 'production',
-	module: {
-		rules: [
-			{
-				test: /\.ts?$/,
-				use: 'ts-loader',
-				exclude: /node_modules/
-			},
-			{
-				test: /\.node?$/,
-				use: 'node-loader'
-			}
-		]
-	},
-	entry: {
-		notation: './asset/'
-	},
-	resolve: {
-		extensions: ['.ts']
-	},
-	output: {
-		filename: 'index.js',
-		path: path.resolve(__dirname)
-	},
-	externals: [nodeExternals()]
-};
-*/
+import path from 'path';
 
-module.exports = [clientConfig];
+export default {
+  target: "node",
+  mode: 'development',
+  devtool: 'inline-source-map',
+
+  entry: {
+    min:path.resolve('./lib/index.js')
+  },
+  output: {
+    path: path.resolve('./dist'),
+    filename:'[name].js',
+    library: 'myanmarNotation',
+    libraryTarget: 'window'
+  },
+  resolve: {
+    extensions: ['.js'],
+  },
+  plugins: [],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                // [
+                //   '@babel/preset-env',
+                //   {
+                //     'modules': 'auto',//commonjs,amd,umd,systemjs,auto
+                //     'useBuiltIns': 'usage',
+                //     'targets': '> 0.25%, not dead',
+                //     'corejs': 3
+                //   }
+                // ]
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
