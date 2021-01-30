@@ -1,6 +1,7 @@
 dist/
 /*.js
 /*.ts
+/*.map
 !*.config.js
 !*.build.js
 #*-lock.json
