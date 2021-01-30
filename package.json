@@ -2,8 +2,8 @@
   "name": "myanmar-notation",
   "version": "1.4.1",
   "description": "get Myanmar digital and notation",
-  "main": "dist/index",
-  "types": "dist/index",
+  "main": "index",
+  "types": "index",
   "type": "module",
   "scripts": {
     "prepublish": "npm run build",
