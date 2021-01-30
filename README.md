@@ -82,7 +82,7 @@ notation.get('27,000,000.00');
 {
   "number": "၂၇,၀၀၀,၀၀၀",
   "notation": [
-		{
+    {
       "sense": "သိန်းပေါင်း နှစ်ရာ့ခုနစ်ဆယ်"
     },
     {
@@ -111,6 +111,8 @@ notation.get('5.23e+8');
   ]
 }
 ```
+
+> NOTE: `type` attribute in package should be `commonjs` before publishing to npm, but the package itself is a module so testing, developing must be alway `module`.
 
 [![License: MIT][license]][license-url]
 
