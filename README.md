@@ -140,7 +140,7 @@ myanmarNotation('100');
 [webpack-check]: https://img.shields.io/badge/webpack-yes-green.svg?longCache=true
 [webpack-url]: https://unpkg.com/myanmar-notation@latest/min.js
 [travis]: https://travis-ci.com/khensolomon/myanmar-notation.svg
-[travis-url]: https://travis-ci.org/khensolomon/myanmar-notation
+[travis-url]: https://travis-ci.com/khensolomon/myanmar-notation
 [npm-download]: https://img.shields.io/npm/dt/myanmar-notation.svg
 [npm-dl-url]: https://www.npmjs.com/package/myanmar-notation
 [license]: https://img.shields.io/badge/License-MIT-brightgreen.svg?longCache=true&style=popout-square
