@@ -9,7 +9,7 @@ export default {
     min:path.resolve('./lib/index.js')
   },
   output: {
-    path: path.resolve('./dist'),
+    path: path.resolve('./'),
     filename:'[name].js',
     library: 'myanmarNotation',
     libraryTarget: 'window'
