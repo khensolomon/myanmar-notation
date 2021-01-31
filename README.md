@@ -122,7 +122,7 @@ notation.get('90');
 myanmarNotation('100');
 ```
 
-## Commonjs
+## CommonJS
 
 ```js
 const notation = require('myanmar-notation');
