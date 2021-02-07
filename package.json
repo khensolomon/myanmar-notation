@@ -1,7 +1,7 @@
 {
   "name": "myanmar-notation",
   "version": "1.4.4",
-  "description": "get Myanmar digital and notation",
+  "description": "is Node.js module and a library which converts the given number into words in Myanmar.",
   "main": "index",
   "types": "index",
   "type": "module",
@@ -50,7 +50,7 @@
   ],
   "author": "Khen Solomon Lethil",
   "license": "MIT",
-  "homepage": "https://github.com/khensolomon/myanmar-notation#readme",
+  "homepage": "https://khensolomon.github.io/myanmar-notation/",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.10",

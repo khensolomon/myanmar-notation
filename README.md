@@ -1,6 +1,6 @@
 # myanmar-notation
 
-...`get()` Myanmar digital and notation
+... is Node.js module and a library which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>. Checkout [Demo][demo]...
 
 [![Build Status][travis]][travis-url]
 [![npm][npm-download]][npm-dl-url]
@@ -11,7 +11,7 @@
 - [x] Decimals are rounded (floor)
 - [x] Query `get(2700)`, `get('၂၇၀၀')`, `get('27,000,000.00')` ,`get('5.23e+8')` is flexible
 - [x] Convert into Typescript
-- [ ] Preparing Demo
+- [x] [Demo][demo]
 - [x] mocha
 - [x] Auto-load
 - [x] webpack
@@ -136,6 +136,8 @@ myanmarNotation('100');
 > NOTE: `type` attribute in package should be `commonjs` before publishing to npm, but the package itself is a module so testing, developing must be alway `module`.
 
 [![License: MIT][license]][license-url]
+
+[demo]: https://khensolomon.github.io/myanmar-notation/
 
 [test-mocha]: https://img.shields.io/badge/test-mocha-green.svg?longCache=true
 [webpack-check]: https://img.shields.io/badge/webpack-yes-green.svg?longCache=true
