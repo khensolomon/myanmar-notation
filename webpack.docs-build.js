@@ -8,6 +8,9 @@ import common from './webpack.docs.js';
 const config = merge(common, {
   mode: 'production',
   devtool:'hidden-nosources-source-map', //source-map nosources-source-map
+  output: {
+    publicPath: '/myanmar-notation/'
+  },
 });
 
 // @ts-ignore
