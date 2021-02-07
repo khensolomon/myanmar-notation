@@ -1,7 +1,11 @@
 lib/
 dist/
+assets/
 test/
 #min.js
+*.docs-*.js
+*.docs-*.js
+*.docs.js
 *.config.js
 *.build.js
 *-lock.json

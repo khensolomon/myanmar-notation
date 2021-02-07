@@ -4,6 +4,7 @@ dist/
 /*.map
 !*.config.js
 !*.build.js
+!*.docs*.js
 #*-lock.json
 
 # Logs
