@@ -2,9 +2,10 @@
 
 ... is Node.js module and a library which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>. Checkout [Demo][demo]...
 
-[![Build Status][travis]][travis-url]
-[![npm][npm-download]][npm-dl-url]
-[![Webpack][webpack-check]][webpack-url]
+![Github][workflows]
+[![Build Status][travis-svg]][travis]
+[![npm][npm-svg]][npm]
+[![Webpack][webpack-check]][latest-min]
 ![Mocha][test-mocha]
 
 - [x] Return formatted Numeric
@@ -138,13 +139,14 @@ myanmarNotation('100');
 [![License: MIT][license]][license-url]
 
 [demo]: https://khensolomon.github.io/myanmar-notation/
+[workflows]: https://github.com/khensolomon/myanmar-notation/workflows/Node/badge.svg
 
 [test-mocha]: https://img.shields.io/badge/test-mocha-green.svg?longCache=true
 [webpack-check]: https://img.shields.io/badge/webpack-yes-green.svg?longCache=true
-[webpack-url]: https://unpkg.com/myanmar-notation@latest/min.js
-[travis]: https://travis-ci.com/khensolomon/myanmar-notation.svg
-[travis-url]: https://travis-ci.com/khensolomon/myanmar-notation
-[npm-download]: https://img.shields.io/npm/dt/myanmar-notation.svg
-[npm-dl-url]: https://www.npmjs.com/package/myanmar-notation
+[latest-min]: https://unpkg.com/myanmar-notation@latest/min.js
+[travis-svg]: https://travis-ci.com/khensolomon/myanmar-notation.svg
+[travis]: https://travis-ci.com/khensolomon/myanmar-notation
+[npm-svg]: https://img.shields.io/npm/dt/myanmar-notation.svg
+[npm]: https://www.npmjs.com/package/myanmar-notation
 [license]: https://img.shields.io/badge/License-MIT-brightgreen.svg?longCache=true&style=popout-square
 [license-url]: https://opensource.org/licenses/MIT
