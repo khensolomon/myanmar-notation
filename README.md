@@ -1,6 +1,8 @@
 # myanmar-notation
 
-... is Node.js module and a library which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>. Checkout [Demo][demo]...
+... is Node.js module and a library which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>.
+
+Checkout [Demo][demo]...
 
 ![Github][workflows]
 [![Build Status][travis-svg]][travis]
@@ -31,16 +33,16 @@
 myanmarNotation.get(12345678);
 // return
 {
-  "number": "၁၂,၃၄၅,၆၇၈",
+  "number": "၁၂၃၄၅၆၇၈",
   "notation": [
     {
-      "sense": "သိန်းပေါင်း တစ်ရာ့နှစ်ဆယ့်သုံးနှင့် လေးသောင်းငါးထောင်ခြောက်ရာခုနစ်ဆယ်နှင့်ရှစ်"
+      "sense": "သိန်းပေါင်း တစ်ရာ့နှစ်ဆယ့်သုံးနှင့် လေးသောင်း ငါးထောင် ခြောက်ရာ ခုနစ်ဆယ်နှင့် ရှစ်"
     },
     {
-      "sense": "သန်းပေါင်း တစ်ဆယ့်နှစ်နှင့် သုံးသိန်းလေးသောင်းငါးထောင်ခြောက်ရာခုနစ်ဆယ်နှင့်ရှစ်"
+      "sense": "သန်းပေါင်း တစ်ဆယ့်နှစ်နှင့် သုံးသိန်း လေးသောင်း ငါးထောင် ခြောက်ရာ ခုနစ်ဆယ်နှင့် ရှစ်"
     },
     {
-      "sense": "တစ်ကု​ဋေ​နှစ်သန်းသုံးသိန်းလေးသောင်းငါးထောင်ခြောက်ရာခုနစ်ဆယ်နှင့်ရှစ်"
+      "sense": "တစ်ကု​ဋေ​ နှစ်သန်း သုံးသိန်း လေးသောင်း ငါးထောင် ခြောက်ရာ ခုနစ်ဆယ်နှင့် ရှစ်"
     }
   ]
 }
@@ -60,10 +62,10 @@ let notation = require('myanmar-notation');
 notation.get(2700);
 // return
 {
-  "number": "၂,၇၀၀",
+  "number": "၂၇၀၀",
   "notation": [
     {
-      "sense": "နှစ်ထောင်နှင့်ခုနစ်ရာ"
+      "sense": "နှစ်ထောင်နှင့် ခုနစ်ရာ"
     }
   ]
 }
@@ -71,10 +73,10 @@ notation.get(2700);
 notation.get('၂၇၀၀');
 // return
 {
-  "number": "2,700",
+  "number": "2700",
   "notation": [
     {
-      "sense": "နှစ်ထောင်နှင့်ခုနစ်ရာ"
+      "sense": "နှစ်ထောင်နှင့် ခုနစ်ရာ"
     }
   ]
 }
@@ -82,16 +84,22 @@ notation.get('၂၇၀၀');
 notation.get('27,000,000.00');
 // return
 {
-  "number": "၂၇,၀၀၀,၀၀၀",
+  "number": "၂၇၀၀၀၀၀၀",
   "notation": [
     {
-      "sense": "သိန်းပေါင်း နှစ်ရာ့ခုနစ်ဆယ်"
+      "sense": "သိန်းပေါင်း နှစ်ရာ့ခုနစ်ဆယ်",
+      "exam": {
+        "test": 2
+      }
     },
     {
-      "sense": "သန်းပေါင်း နှစ်ဆယ့်ခုနစ်"
+      "sense": "သန်းပေါင်း နှစ်ဆယ့်ခုနစ်",
+      "exam": {
+        "test": 2
+      }
     },
     {
-      "sense": "နှစ်ကု​ဋေ​နှင့်ခုနစ်သန်း"
+      "sense": "နှစ်ကု​ဋေ​နှင့် ခုနစ်သန်း"
     }
   ]
 }
@@ -99,16 +107,16 @@ notation.get('27,000,000.00');
 notation.get('5.23e+8');
 // return
 {
-  "number": "၅၂၃,၀၀၀,၀၀၀",
+  "number": "၅၂၃၀၀၀၀၀၀",
   "notation": [
     {
-      "sense": "သိန်းပေါင်း ငါးထောင့်နှစ်ရာ့သုံးဆယ်"
+      "sense": "သိန်းပေါင်း ငါးထောင့်နှစ်ရာ့သုံးဆယ်"
     },
     {
-      "sense": "သန်းပေါင်း ငါးရာ့နှစ်ဆယ့်သုံး"
+      "sense": "သန်းပေါင်း ငါးရာ့နှစ်ဆယ့်သုံး"
     },
     {
-      "sense": "ကု​ဋေ​ပေါင်း ငါးဆယ့်နှစ်နှင့် သုံးသန်း"
+      "sense": "ကု​ဋေ​ပေါင်း ငါးဆယ့်နှစ်နှင့် သုံးသန်း"
     }
   ]
 }
