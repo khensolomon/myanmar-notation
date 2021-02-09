@@ -2,7 +2,7 @@
 @import 'font.Face';
 html{
   touch-action: manipulation;
-  width: 100%; height: 100%;
+  // width: 100%; height: 100%;
   @include scrollbar();
 }
 
@@ -19,14 +19,7 @@ a, span{
 body {
   @extend html; font-family:$Font; color:$Color;font-size:$FontSize;
   background-color: $ColorBackground;
-  // background-color: lighten($ColorMain,10);
-}
-
-body{
   >div:first-child{
-    width: 100%;
-    height: 100%;
-
     display: flex;
     flex-direction: column;
     // justify-content: flex-start; /* align items in Main Axis */
@@ -36,10 +29,12 @@ body{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: baseline;
+      // align-items: stretch;
       // text-align: center;
       vertical-align: middle;
+
       padding: 10px 3%;
+      // width: 90%;
       // overflow: hidden;
       &.bar {
         @include user-select();
@@ -48,7 +43,7 @@ body{
           &:nth-child(1){
             h1{
               text-transform: uppercase;
-              font-size: 120%;
+              font-size: 110%;
               font-weight: lighter;
             }
 
@@ -71,19 +66,21 @@ body{
           }
         }
       }
-      &.wrapper {
+      &.wrapper{
         flex: 1;
         >div{
           display: flex;
           flex-direction: column;
+          width: 100%;
           >div{
-            min-width: 400px;
+            // min-width: 300px;
+
             &:nth-child(1){
-              // width: 80%;
               >div{
                 padding: 15px;
                 border-radius: 3px;
                 // width: 400px;
+                // width: 80%;
                 background-color: lighten(lightyellow,5);
                 box-shadow:inset 0em 0em 0.2em gray;
                 outline: none;
@@ -131,6 +128,51 @@ body{
 
         }
       }
+      &.footer{
+        // display: flex;
+        // flex-direction: row;
+        // justify-content:center;
+        // background-color: red;
+        >div{
+          // text-align: center;
+          a {
+            // display: inline-block;
+          }
+        }
+      }
     }
   }
+  @media #{$media-mobile} {
+    >div:first-child{
+      // display: flex;
+      // flex-direction: column;
+      >div {
+        &.bar {
+          >div{
+            a.badge{
+              display: none;
+            }
+          }
+        }
+        &.footer{
+          // justify-content:center;
+          // flex-direction: column;
+          // vertical-align: middle;
+          >div{
+            // display: flex;
+            // flex-direction: column;
+            // justify-content:center;
+            // background-color: red;
+            // text-align: center;
+            a {
+              // display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+  // @media #{$media-mobile} {}
+  // @media #{$media-tablet} {}
+  // @media #{$media-desktop} {}
 }

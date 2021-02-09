@@ -6,10 +6,12 @@
     </div>
     <div>
       <a href="https://github.com/khensolomon/myanmar-notation/issues/new" class="link">issue</a>
-      <a href="https://travis-ci.com/khensolomon/myanmar-notation" rel="nofollow">
+      <a target="_blank" class="badge github" href="https://github.com/khensolomon/myanmar-notation/workflows/Node/badge.svg">
+        <img src="https://github.com/khensolomon/myanmar-notation/workflows/Node/badge.svg" alt="Github">
+      </a>
+      <a href="https://travis-ci.com/khensolomon/myanmar-notation" class="badge travis">
         <img alt="Build Status" src="https://travis-ci.com/khensolomon/myanmar-notation.svg">
       </a>
-      <!-- <a href="/?q=2343"  class="link">share</a> -->
     </div>
   </div>
   <!-- <router-view class="wrapper"></router-view> -->
@@ -35,6 +37,25 @@
           <!-- <p v-html="item" class="json"></p> -->
         </div>
       </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div>
+      <a href="https://github.com/khensolomon/myanmar-notation/network">
+        <img alt="GitHub forks" src="https://img.shields.io/github/forks/khensolomon/myanmar-notation?style=social">
+      </a>
+
+      <a href="https://github.com/khensolomon/myanmar-notation/stargazers">
+        <img alt="GitHub stars" src="https://img.shields.io/github/stars/khensolomon/myanmar-notation?style=social">
+      </a>
+      <a href="https://github.com/khensolomon/myanmar-notation/issues">
+        <img alt="GitHub issues" src="https://img.shields.io/github/issues/khensolomon/myanmar-notation?style=social">
+      </a>
+    </div>
+    <div>
+      <a href="https://github.com/khensolomon/myanmar-notation/blob/master/LICENSE">
+        <img alt="GitHub license" src="https://img.shields.io/github/license/khensolomon/myanmar-notation?style=social">
+      </a>
     </div>
   </div>
 </div>
