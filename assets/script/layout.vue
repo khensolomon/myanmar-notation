@@ -29,7 +29,7 @@
       <div class="result">
         <div v-for="item in notation" v-bind:key="item">
           <p>
-            <span v-html="item.number"></span> .get(<span v-html="item.query"></span>)
+            <span v-html="item.number"></span> <span v-html="item.digit"></span> .get(<span v-html="item.query"></span>)
           </p>
           <ul v-for="sense in item.notation" v-bind:key="sense">
             <li v-html="sense.sense"></li>
