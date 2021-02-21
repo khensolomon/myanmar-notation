@@ -1,12 +1,12 @@
 {
   "name": "myanmar-notation",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "is Node.js module and a library which converts the given number into words in Myanmar.",
   "main": "index",
   "types": "index",
   "type": "module",
   "scripts": {
-    "prepublish": "npm run build",
+    "-prepublish": "npm run build",
     "build": "npm run build:web && npm run build:node",
     "build:node": "tsc",
     "build:web": "node webpack.build.js",
