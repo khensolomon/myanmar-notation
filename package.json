@@ -6,7 +6,7 @@
   "types": "index",
   "type": "module",
   "scripts": {
-    "-prepublish": "npm run build",
+    "prepublish": "npm run build",
     "build": "npm run build:web && npm run build:node",
     "build:node": "tsc",
     "build:web": "node webpack.build.js",
