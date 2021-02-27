@@ -94,14 +94,28 @@ describe('Notation', () => {
     });
   });
 
-	it('keepBurmese', () => {
-		const job = notation.keepBurmese('12345');
-		assert.strictEqual('၁၂၃၄၅',job);
-	});
+  describe("keepBurmese", () => {
+    it('regular', () => {
+      const job = notation.keepBurmese('12345');
+      assert.strictEqual('၁၂၃၄၅',job);
+    });
 
-	it('turnBurmese', () => {
-		const job = notation.turnBurmese('၉၈၇၆၅');
-		assert.strictEqual('98765',job);
-	});
+    it('mix', () => {
+      const job = notation.keepBurmese('e12345abc');
+      assert.strictEqual('e၁၂၃၄၅abc',job);
+    });
+  });
+
+  describe("turnBurmese", () => {
+    it('regular', () => {
+      const job = notation.turnBurmese('၉၈၇၆၅');
+      assert.strictEqual('98765',job);
+    });
+
+    it('mix', () => {
+      const job = notation.turnBurmese('u၉၈၇s၆၅fe');
+      assert.strictEqual('u987s65fe',job);
+    });
+  });
 
 });
