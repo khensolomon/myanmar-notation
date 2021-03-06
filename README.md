@@ -22,7 +22,7 @@ However using this primarly structure in large amount seem very weird, eg.100000
 
 > 100000000: "သိန်းတစ်ထောင်", "သန်းတစ်ရာ", "ကု​ဋေ​တစ်ဆယ်"
 
-Check [Demo][demo] is available...
+Check [demo][demo] is available...
 
 ![Github][workflows]
 [![Build Status][travis-svg]][travis]
