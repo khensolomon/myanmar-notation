@@ -93,6 +93,9 @@ the `notation.keepBurmese()` function convert the given string(number) to Burmes
 ```js
 notation.keepBurmese(1234567);
 > "၁၂၃၄၅၆၇"
+
+notation.keepBurmese('a567');
+> "a၅၆၇"
 ```
 
 ### TurnBurmese
@@ -102,6 +105,9 @@ the `notation.turnBurmese()` function convert the given string(number) to Englis
 ```js
 notation.turnBurmese('၁၂၃၄၅၆၇');
 > "1234567"
+
+notation.turnBurmese('123၅၆၇');
+> "123567"
 ```
 
 ### get
