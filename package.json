@@ -36,6 +36,9 @@
     "min.js",
     "min.js.map"
   ],
+  "engines": {
+    "node": ">=12.x"
+  },
   "author": "Khen Solomon Lethil",
   "license": "MIT",
   "homepage": "https://khensolomon.github.io/myanmar-notation/",
