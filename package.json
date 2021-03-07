@@ -1,7 +1,7 @@
 {
   "name": "myanmar-notation",
   "version": "1.4.5",
-  "description": "is Node.js module and a library which converts the given number into words in Myanmar.",
+  "description": "MN is a Node.js module and a library which converts the given number into words in Myanmar.",
   "main": "index",
   "types": "index",
   "type": "module",
@@ -14,19 +14,6 @@
     "test": "mocha",
     "docs": "node webpack.docs-serve.js",
     "docs:build": "node webpack.docs-build.js"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ],
-    "plugins": []
   },
   "repository": {
     "type": "git",
