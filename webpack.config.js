@@ -45,3 +45,17 @@ export default {
     ]
   }
 };
+
+// "babel": {
+//   "presets": [
+//     [
+//       "@babel/preset-env",
+//       {
+//         "targets": {
+//           "node": "current"
+//         }
+//       }
+//     ]
+//   ],
+//   "plugins": []
+// },
