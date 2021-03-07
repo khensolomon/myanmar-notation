@@ -73,8 +73,8 @@ let notation = window.myanmarNotation;
 ## API
 
 - [multiplication](#multiplication)
-- [keepBurmese](#keepburmese)
-- [turnBurmese](#turnburmese)
+- [keep](#keep)
+- [turn](#turn)
 - [get](#get)
 
 ### Multiplication
@@ -86,27 +86,27 @@ notation.multiplication(5,'10');
 > "100000"
 ```
 
-### KeepBurmese
+### Keep
 
-the `notation.keepBurmese()` function convert the given string(number) to Burmese number and return the result as string.
+the `notation.keep()` function convert the given string(number) to Burmese number and return the result as string.
 
 ```js
-notation.keepBurmese(1234567);
+notation.keep(1234567);
 > "၁၂၃၄၅၆၇"
 
-notation.keepBurmese('a567');
+notation.keep('a567');
 > "a၅၆၇"
 ```
 
-### TurnBurmese
+### Turn
 
-the `notation.turnBurmese()` function convert the given string(number) to English number and return the result as string.
+the `notation.turn()` function convert the given string(number) to English number and return the result as string.
 
 ```js
-notation.turnBurmese('၁၂၃၄၅၆၇');
+notation.turn('၁၂၃၄၅၆၇');
 > "1234567"
 
-notation.turnBurmese('123၅၆၇');
+notation.turn('123၅၆၇');
 > "123567"
 ```
 
