@@ -1,12 +1,12 @@
 # myanmar-notation
 
-...is Node.js module and a library which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>. Check [live Application][demo] is available...
+...is [Node.js](#node.js) module and a [library](#browser) which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>. Check [live Application][demo] is available...
 
 ![Github][workflows]
 [![Build Status][travis-svg]][travis]
 [![npm][npm-svg]][npm]
 [![Webpack][webpack-check]][latest-min]
-![Mocha][test-mocha]
+![test-mocha]
 
 Normally "ပေါင်း" in Myanmar translated "plus", however the same word using in a large number of amount dedicate multiply. For example
 သိန်းတစ်သောင်း is `1 0000 00000` and can also/usually pronounced သိန်းပေါင်း တစ်သောင်း which mean "`(100000*10000)`", therefor "သိန်းတစ်သောင်း" and "သိန်းပေါင်း တစ်သောင်း" has dedicated the same amount. This module is using "ပေါင်း" when the dedicated amount is larger than the subsequent scale name "ခု", "ဆယ်", "ရာ", "ထောင်", "သောင်း", "သိန်း", "သန်း" and "ကု​ဋေ​".
@@ -79,7 +79,7 @@ let notation = window.myanmarNotation;
 
 ### Multiplication
 
-the `notation.multiplication()` function construct the given len to zero ending, it takes 2 arguments `(len, head='1')`, second argument is optional and return the result as string.
+the `notation.multiplication()` construct the given len to zero ending, it takes 2 arguments `(len, head='1')`, second argument is optional and return the result as string.
 
 ```js
 notation.multiplication(5,'10');
@@ -88,7 +88,7 @@ notation.multiplication(5,'10');
 
 ### Keep
 
-the `notation.keep()` function convert the given string(number) to Burmese number and return the result as string.
+the `notation.keep()` convert the given string(number) to Burmese number and return the result as string.
 
 ```js
 notation.keep(1234567);
@@ -100,7 +100,7 @@ notation.keep('a567');
 
 ### Turn
 
-the `notation.turn()` function convert the given string(number) to English number and return the result as string.
+the `notation.turn()` convert the given string(number) to English number and return the result as string.
 
 ```js
 notation.turn('၁၂၃၄၅၆၇');
