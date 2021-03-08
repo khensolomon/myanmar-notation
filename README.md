@@ -1,6 +1,6 @@
 # myanmar-notation
 
-...is [Node.js](#node.js) module and a [library](#browser) which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>. Check [live Application][demo] is available...
+...is [Node.js](#nodejs) module and a [library](#browser) which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>. Check [live Application][demo] is available...
 
 ![Github][workflows]
 [![Build Status][travis-svg]][travis]
