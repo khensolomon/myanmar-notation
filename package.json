@@ -1,6 +1,6 @@
 {
   "name": "myanmar-notation",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "MN is a Node.js module and a library which converts the given number into words in Myanmar.",
   "main": "index",
   "types": "index",
