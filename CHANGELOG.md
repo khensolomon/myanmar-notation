@@ -4,12 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## 1.4.6
 
-- improve documentation
+- Improve
+  - Docs
   - Usage
   - API
   - Feature
-- change keep and turn API
-- engines -> Node.JS Compatibility
+- Change
+  - keep and turn API
+- engines, Node.JS Compatibility
+- Added
+  - Code of Conduct
+  - Security
 
 ## 1.4.5
 
