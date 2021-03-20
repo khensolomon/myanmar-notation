@@ -2,11 +2,13 @@
 
 ...is [Node.js](#nodejs) module and a [library](#browser) which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places `10^5`, `10^6` and `10^7`. Check [live Application][demo] is available...
 
-![Github][workflows]
-[![Build Status][travis-svg]][travis]
-[![npm][npm-svg]][npm]
-[![Webpack][webpack-check]][latest-min]
+[![workflows-badge]][workflows]
+[![travis-badge]][travis]
+[![npm-badge]][npm]
+[![webpack-badge]][latest-min]
 ![test-mocha]
+
+
 
 Normally "ပေါင်း" in Myanmar translated "plus", however the same word using in a large number of amount dedicate multiply. For example
 သိန်းတစ်သောင်း is `1 0000 00000` and can also/usually pronounced သိန်းပေါင်း တစ်သောင်း which mean "`(100000*10000)`", therefor "သိန်းတစ်သောင်း" and "သိန်းပေါင်း တစ်သောင်း" has dedicated the same amount. This module is using "ပေါင်း" when the dedicated amount is larger than the subsequent scale name "ခု", "ဆယ်", "ရာ", "ထောင်", "သောင်း", "သိန်း", "သန်း" and "ကု​ဋေ​".
@@ -166,17 +168,17 @@ notation.get(12345678);
 
 ## License
 
-[![License: MIT][license]][license-url]
+![shield-license]
 
 [demo]: https://khensolomon.github.io/myanmar-notation/
-[workflows]: https://github.com/khensolomon/myanmar-notation/workflows/Node/badge.svg
+[workflows-badge]: https://github.com/khensolomon/myanmar-notation/workflows/Node/badge.svg
+[workflows]: https://github.com/khensolomon/myanmar-notation/actions/workflows/node.yml
 [test-mocha]: https://img.shields.io/badge/test-mocha-green.svg?longCache=true
-[webpack-check]: https://img.shields.io/badge/webpack-yes-green.svg?longCache=true
+[webpack-badge]: https://img.shields.io/badge/webpack-yes-green.svg?longCache=true
 [latest-min]: https://unpkg.com/myanmar-notation@latest/min.js
 [unpkg]: https://unpkg.com/
-[travis-svg]: https://travis-ci.com/khensolomon/myanmar-notation.svg
+[travis-badge]: https://travis-ci.com/khensolomon/myanmar-notation.svg
 [travis]: https://travis-ci.com/khensolomon/myanmar-notation
-[npm-svg]: https://img.shields.io/npm/dt/myanmar-notation.svg
+[npm-badge]: https://img.shields.io/npm/dt/myanmar-notation.svg
 [npm]: https://www.npmjs.com/package/myanmar-notation
-[license]: https://img.shields.io/badge/License-MIT-brightgreen.svg?longCache=true&style=popout-square
-[license-url]: https://opensource.org/licenses/MIT
+[shield-license]: https://img.shields.io/github/license/khensolomon/myanmar-notation?style=social
