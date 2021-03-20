@@ -1,6 +1,6 @@
 # myanmar-notation
 
-...is [Node.js](#nodejs) module and a [library](#browser) which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places 10<sup>5</sup>, 10<sup>6</sup> and 10<sup>7</sup>. Check [live Application][demo] is available...
+...is [Node.js](#nodejs) module and a [library](#browser) which converts the given number into words in Myanmar. Following written rule and add the creaky tone on number places `10^5`, `10^6` and `10^7`. Check [live Application][demo] is available...
 
 ![Github][workflows]
 [![Build Status][travis-svg]][travis]
@@ -47,8 +47,8 @@ import {get} from 'myanmar-notation';
 
 notation.get(2700);
 // notation.multiplication(5);
-// notation.keepBurmese(123);
-// notation.turnBurmese('၄၅၆');
+// notation.keep(123);
+// notation.turn('၄၅၆');
 get(12345678);
 
 // CommonJS
@@ -167,8 +167,6 @@ notation.get(12345678);
 ## License
 
 [![License: MIT][license]][license-url]
-
-> NOTE: `type` attribute in package should be `commonjs` before publishing to npm, but the package itself is a module so testing, developing must be alway `module`.
 
 [demo]: https://khensolomon.github.io/myanmar-notation/
 [workflows]: https://github.com/khensolomon/myanmar-notation/workflows/Node/badge.svg
