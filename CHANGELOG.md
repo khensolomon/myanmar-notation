@@ -15,6 +15,16 @@ All notable changes to this project will be documented in this file.
 - Added
   - Code of Conduct
   - Security
+- devDependencies
+  - @babel/core: 7.13.13
+  - @babel/preset-env: 7.13.12
+  - css-loader: 5.2.0
+  - mini-css-extract-plugin: 1.4.0
+  - mocha: 8.3.2
+  - sass: 1.32.8
+  - sass-loader: 11.0.1
+  - typescript: 4.2.3
+  - vue-resource: 1.5.2
 
 ## 1.4.5
 
