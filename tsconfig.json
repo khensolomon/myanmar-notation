@@ -1,12 +1,10 @@
 {
-	"compilerOptions": {
+  "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
-
     "rootDir": "./lib",
     "outDir": "./",
-
     "declaration": true,
     "alwaysStrict": true,
     "noImplicitThis": true,
@@ -27,10 +25,12 @@
     "watch": false
   },
   "compileOnSave": false,
-  "include": ["./lib/**/*"],
-	"exclude": [
-	  "node_modules",
-	  "test",
-	  "dist"
-	]
+  "include": [
+    "./lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "test",
+    "dist"
+  ]
 }
